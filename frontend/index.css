@@ -6,6 +6,7 @@
 html,
 body {
   font-family: "Roboto", sans-serif;
+  background-color: rgb(253, 253, 241);
 }
 
 .rounded_container {
@@ -19,6 +20,7 @@ body {
   border-radius: 5;
   border: 1px solid #ddd;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
 }
 
 .rounded_container_image {

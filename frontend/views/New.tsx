@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addNewCake } from "../api";
 import { withRouter } from "react-router-dom";
+import YumFactor from "../components/YumFactor";
 
 // name a comment and a yum factor between 1 and 5.
 const New = props => {
@@ -8,7 +9,7 @@ const New = props => {
     name: "",
     imageUrl: "",
     comment: "",
-    yumFactor: 0
+    yumFactor: 1
   });
 
   const [validate, setValidate] = useState(false);
@@ -22,7 +23,7 @@ const New = props => {
   };
 
   const decreaseYum = () => {
-    if (newCake.yumFactor === 0) {
+    if (newCake.yumFactor === 1) {
       return;
     }
     setNewCake({ ...newCake, yumFactor: newCake.yumFactor - 1 });
@@ -105,17 +106,12 @@ const New = props => {
       >
         Yum factor!
       </h3>
-      <div className="yum_factor">
-        <button onClick={decreaseYum}>-</button>
-        <div
-          style={{
-            borderWidth: newCake.yumFactor
-          }}
-        >
-          {newCake.yumFactor}
-        </div>
-        <button onClick={increaseYum}>+</button>
-      </div>
+
+      <YumFactor
+        yumFactor={newCake.yumFactor}
+        increaseYum={increaseYum}
+        decreaseYum={decreaseYum}
+      />
 
       <button className="button_add" onClick={validateAndSubmit}>
         Add that cake!
