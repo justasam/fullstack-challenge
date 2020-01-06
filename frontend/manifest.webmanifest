@@ -1,0 +1,14 @@
+{
+  "name": "Cakes!",
+  "short_name": "Cakes",
+  "description": "Cakes PWA",
+  "start_url": "./Home",
+  "theme_color": "#add8e6",
+  "icons": [
+    {
+      "src": "./cake.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
