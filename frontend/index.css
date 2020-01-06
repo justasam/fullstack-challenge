@@ -3,6 +3,87 @@
   margin: 0;
 }
 
-html, body {
-  font-family: 'Roboto', sans-serif;
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.rounded_container {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: flex;
+  max-width: 500px;
+  margin: 20px auto;
+  flex-direction: column;
+  border-radius: 5;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.text_input {
+  margin: 10px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid gray;
+}
+
+.text_input:focus {
+  border-color: rgb(85, 65, 205);
+}
+
+.yum_factor {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  align-items: center;
+  align-content: center;
+}
+
+.yum_factor button {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.yum_factor button:active {
+  border-color: rgb(85, 65, 205);
+  color: rgb(85, 65, 205);
+}
+
+.yum_factor > div {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 30px;
+  border-color: rgb(85, 65, 205);
+}
+
+.button_add {
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.button_add:hover {
+  background-color: rgb(85, 65, 205);
+  color: white;
+}
+
+.validate_text {
+  color: red;
+  padding: 0px 10px;
+  margin-bottom: 10px;
 }
