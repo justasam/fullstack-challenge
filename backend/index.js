@@ -4,8 +4,11 @@ const low = require('lowdb'); // would use mongo in prod, this will do for small
 const FileSync = require('lowdb/adapters/FileAsync');
 const bodyParser = require('body-parser');
 const shortid = require('shortid');
+const path = require('path');
 
 const app = express();
+// serve static files from react app
+app.use(express.static(path.join(__dirname, 'build')));
 
 // need to wait for db to start up
 // so async IIFE
@@ -57,5 +60,11 @@ const app = express();
     res.sendStatus(200);
   });
 
-  app.listen(3000, () => console.log('Listening on port 3000'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build/index.html'));
+  })
+
+  const port = process.env.PORT || 5000;
+
+  app.listen(port, () => console.log(`Listening on port ${port}`));
 })()

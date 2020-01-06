@@ -1,6 +1,6 @@
 import { Cake } from "./interfaces";
 
-const genUrl = (str: string) => `http://localhost:3000/${str}`;
+const genUrl = (str: string) => `/${str}`;
 
 export const getAllCakes = async () => {
   try {
@@ -42,8 +42,8 @@ export const addNewCake = async (cake: Cake) => {
       method: "post",
       body: JSON.stringify(cake),
       headers: {
-        'Content-Type': 'application/json',
-      },
+        "Content-Type": "application/json"
+      }
     });
     if (!res.ok) {
       return {
@@ -64,8 +64,8 @@ export const updateCake = async (cake: Cake) => {
       method: "put",
       body: JSON.stringify(cake),
       headers: {
-        'Content-Type': 'application/json',
-      },
+        "Content-Type": "application/json"
+      }
     });
     if (!res.ok) {
       return {
