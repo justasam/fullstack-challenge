@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/index.js",
-    "heroku-postbuild": "cd ./frontend && npm install --only=dev && npm install && npm run build && ../backend/afterBuild.sh"
+    "heroku-postbuild": "cd ./frontend && npm install --only=dev && npm install && npm run build && cd ../backend && rm -rf ./build/* ; mkdir ./build/; ../frontend/build/* -f $_"
   },
   "author": "",
   "license": "ISC",
