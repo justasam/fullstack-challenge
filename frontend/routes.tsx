@@ -9,8 +9,8 @@ export const Routes = () => {
     <div>
       <NavBar />
       <Switch>
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/">
+        <Route exact={true} path="/Home" component={Home} />
+        <Route exact={true} path="/">
           <Redirect to="/Home" />
         </Route>
         <Route component={NoMatch} />
