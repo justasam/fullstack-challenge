@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { getAllCakes } from "../api";
+import React, { useState } from "react";
+import { addNewCake } from "../api";
+import { withRouter } from "react-router-dom";
 
 // name a comment and a yum factor between 1 and 5.
-const New = () => {
+const New = props => {
   const [newCake, setNewCake] = useState({
     name: "",
     imageUrl: "",
@@ -34,7 +35,7 @@ const New = () => {
     setNewCake({ ...newCake, yumFactor: newCake.yumFactor + 1 });
   };
 
-  const validateAndSubmit = () => {
+  const validateAndSubmit = async () => {
     if (
       newCake.name === "" ||
       newCake.comment === "" ||
@@ -43,6 +44,13 @@ const New = () => {
       setValidate(true);
       return;
     }
+
+    const res = await addNewCake(newCake);
+    if (res.error) {
+      // should be removed in prod
+      console.error("Error adding a cake:", res);
+    }
+    props.history.push("/Home");
   };
 
   return (
@@ -116,4 +124,4 @@ const New = () => {
   );
 };
 
-export default New;
+export default withRouter(New);
