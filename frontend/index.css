@@ -87,3 +87,23 @@ body {
   padding: 0px 10px;
   margin-bottom: 10px;
 }
+
+.button {
+  margin: 0 auto;
+  border-radius: 3px;
+  border: 2px solid rgb(85, 65, 205);
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(85, 65, 205);
+}
+.button:hover {
+  background-color: rgb(85, 65, 205);
+  color: white;
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

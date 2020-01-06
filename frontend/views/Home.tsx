@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllCakes } from "../api";
 import CakeLink from "../components/CakeLink";
+import { Link } from 'react-router-dom';
 
 import { Cake } from "../interfaces";
 
@@ -32,6 +33,9 @@ const Home = () => {
       ) : (
         cakes.map((cake: Cake) => <CakeLink cake={cake} key={cake.id} />)
       )}
+      <Link to='/New' className='button center'>
+        Add a new cake
+      </Link>
     </div>
   );
 };
