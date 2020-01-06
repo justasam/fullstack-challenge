@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllCakes } from "../api";
 import CakeLink from "../components/CakeLink";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import { Cake } from "../interfaces";
 
@@ -14,7 +14,7 @@ const Home = () => {
     const getCakes = async () => {
       const data = await getAllCakes();
       if (data.error) {
-        setError(`Error: ${data.error.text} ${data.error.code}`);
+        setError(`Error: ${data.error}`);
       } else {
         setCakes(data.cakes);
       }
@@ -27,13 +27,13 @@ const Home = () => {
   return (
     <div>
       {loading ? (
-        <h2>Loading...</h2>
+        <h2 style={{ textAlign: "center" }}>Loading...</h2>
       ) : error ? (
-        <h2>{error}</h2>
+        <h2 style={{ textAlign: "center" }}>{error}</h2>
       ) : (
         cakes.map((cake: Cake) => <CakeLink cake={cake} key={cake.id} />)
       )}
-      <Link to='/New' className='button center'>
+      <Link to="/New" className="button center" style={{ marginTop: 10 }}>
         Add a new cake
       </Link>
     </div>

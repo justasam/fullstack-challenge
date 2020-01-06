@@ -40,7 +40,10 @@ export const addNewCake = async (cake: Cake) => {
   try {
     const res = await fetch(genUrl("cakes"), {
       method: "post",
-      body: JSON.stringify(cake)
+      body: JSON.stringify(cake),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
     if (!res.ok) {
       return {
@@ -57,9 +60,12 @@ export const addNewCake = async (cake: Cake) => {
 
 export const updateCake = async (cake: Cake) => {
   try {
-    const res = await fetch(genUrl(`cakes/${id}`), {
+    const res = await fetch(genUrl(`cakes/${cake.id}`), {
       method: "put",
-      body: JSON.stringify(cake)
+      body: JSON.stringify(cake),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
     if (!res.ok) {
       return {
