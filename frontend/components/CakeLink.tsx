@@ -11,11 +11,7 @@ const CakeLink = (props: CakeLinkProps) => {
       <img
         src={props.cake.imageUrl}
         alt={props.cake.name}
-        style={{
-          objectFit: "cover",
-          maxWidth: "100%",
-          borderRadius: 5
-        }}
+        className='rounded_container_image'
       />
       <h4
         style={{
