@@ -5,3 +5,7 @@ export interface Cake {
   imageUrl: string;
   yumFactor: number;
 }
+
+export interface CakeLinkProps {
+  cake: Cake;
+}
